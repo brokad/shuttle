@@ -11,4 +11,14 @@ crate-type = ["cdylib"]
 [dependencies]
 shuttle-service = { version = "0.3.2", features = ["web-tower"] }
 tower = { version = "0.4", features = ["full"] }
+
 hyper = { version = "0.14", features = ["full"] }
+http-body = { version = "0.4.5" }
+
+axum = {version="0.5",features=["ws","headers"]}
+
+tonic = { version = "0.5", features = ["tls", "tls-roots", "prost"] }
+prost = "0.8"
+
+[build-dependencies]
+tonic-build = { version = "0.5", features = ["prost"] }

@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package user_service;
+
+service UserService {
+    rpc add_workspace_id(AddWorkspaceRequest) returns (AddWorkspaceResponse) {}
+    rpc remove_workspace_id(RemoveWorkspaceRequest) returns (RemoveWorkspaceResponse) {}
+}
+
+message AddWorkspaceRequest {
+    string user_id = 1;
+    string workspace_id = 2;
+}
+
+message AddWorkspaceResponse {
+    string status = 1;
+}
+
+message RemoveWorkspaceRequest {
+    string user_id = 1;
+    string workspace_id = 2;
+}
+
+message RemoveWorkspaceResponse {
+    string status = 1;
+}
